@@ -12,6 +12,7 @@ function! CustomGeneralHighlight()
 	hi Comment		ctermfg=59
 	hi StatusLine	ctermfg=235 ctermbg=243
 	hi Statement	ctermfg=197
+	hi VertSplit	ctermfg=233	ctermbg=239
 endfunction
 
 function! CustomCppHighlight() abort
@@ -42,11 +43,14 @@ function! CustomCppHighlight() abort
 
 	hi cppSTLexception		ctermfg=lightblue
 	hi cppSTLtype			ctermfg=lightblue
-	hi cppSTLnamesapce		ctermfg=NONE
+	hi cppSTLiterator		ctermfg=lightblue
+	hi cppSTLnamespace		ctermfg=NONE
 	hi cppSTLoperator		ctermfg=197
+	hi cppOperator			ctermfg=197
 	hi cppStatement			ctermfg=197
 	hi cppExceptions		ctermfg=197
 	hi cppNumber			ctermfg=141
+	hi cppBoolean			ctermfg=141
 
 endfunction
 
