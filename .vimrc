@@ -87,7 +87,7 @@ Plug 'bfrg/vim-cpp-modern'
 
 call plug#end()
 
-""colorscheme default
+"colorscheme default
 syntax on
 call CustomGeneralHighlight()
 call CustomPythonHighlight()
@@ -106,6 +106,13 @@ inoremap { {}<left>
 set complete+=ksepll
 set completeopt=menuone,longest
 set shortmess+=c
+
+"Text surrounding
+xnoremap ( c(<c-r>")
+xnoremap [ c[<c-r>"]
+xnoremap " c"<c-r>""
+xnoremap ' c'<c-r>"'
+xnoremap ' c'<c-r>"'
 
 "Activate indentation
 filetype off
