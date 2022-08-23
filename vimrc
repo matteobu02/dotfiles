@@ -13,6 +13,8 @@ function! CustomGeneralHighlight()
 	hi StatusLine	ctermfg=235 ctermbg=243
 	hi Statement	ctermfg=197
 	hi VertSplit	ctermfg=233	ctermbg=239
+	hi Pmenu					ctermbg=darkgrey
+	hi pmenuSel					ctermbg=grey
 endfunction
 
 function! CustomCppHighlight() abort
@@ -39,7 +41,7 @@ function! CustomCppHighlight() abort
 	hi cIncluded			ctermfg=186
 	hi cString				ctermfg=186
 	hi cCharacter			ctermfg=186
-	hi cPreCondit			ctermfg=148
+	hi cPreCondit			ctermfg=118
 
 	hi cppSTLexception		ctermfg=lightblue
 	hi cppSTLtype			ctermfg=lightblue
@@ -56,6 +58,7 @@ endfunction
 
 function! CustomPythonHighlight() abort
 	let g:python_highlight_all = 1
+
 	hi pythonClass			ctermfg=lightblue
 	hi pythonFString		ctermfg=lightblue
 	hi pythonFunctionCall	ctermfg=lightblue
@@ -65,7 +68,7 @@ function! CustomPythonHighlight() abort
 	hi pythonImport			ctermfg=197
 	hi pythonOperator		ctermfg=197
 	hi pythonRepeat			ctermfg=197
-	hi pythonFunction		ctermfg=148
+	hi pythonFunction		ctermfg=118
 	hi pythonClassVar		ctermfg=215
 	hi pythonNumber			ctermfg=141
 	hi pythonFloat			ctermfg=141
