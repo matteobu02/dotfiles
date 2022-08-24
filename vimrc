@@ -60,7 +60,6 @@ function! CustomPythonHighlight() abort
 	let g:python_highlight_all = 1
 
 	hi pythonClass			ctermfg=lightblue
-	hi pythonFString		ctermfg=lightblue
 	hi pythonFunctionCall	ctermfg=lightblue
 	hi pythonBuiltinFunc	ctermfg=lightblue
 	hi pythonConditional	ctermfg=197
@@ -76,6 +75,7 @@ function! CustomPythonHighlight() abort
 	hi pythonBoolean		ctermfg=141
 	hi pythonStrFormat		ctermfg=141
 	hi pythonString			ctermfg=186
+	hi pythonFString		ctermfg=186
 	hi pythonBuiltinObj		ctermfg=7
 endfunction
 
