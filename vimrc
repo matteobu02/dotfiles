@@ -26,7 +26,6 @@ function! CustomCppHighlight() abort
 	hi cComment				ctermfg=59
 	hi cType				ctermfg=lightblue
 	hi cStructure			ctermfg=lightblue
-	hi cUserFunction		ctermfg=121
 	hi cInclude				ctermfg=197
 	hi cDefine				ctermfg=197
 	hi cStatement			ctermfg=197
@@ -41,6 +40,7 @@ function! CustomCppHighlight() abort
 	hi cIncluded			ctermfg=186
 	hi cString				ctermfg=186
 	hi cCharacter			ctermfg=186
+	hi cUserFunction		ctermfg=118
 	hi cPreCondit			ctermfg=118
 
 	hi cppSTLexception		ctermfg=lightblue
@@ -83,6 +83,7 @@ endfunction
 call plug#begin('~/.vim/plugged')
 
 "Plug 'crusoexia/vim-monokai'
+ "In case I need a working header for 42 projects
 Plug 'pandark/42header.vim'
 Plug 'vim-scripts/AutoComplPop'
 Plug 'vim-python/python-syntax'
