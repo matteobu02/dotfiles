@@ -1,4 +1,4 @@
-set number
+set nu
 set mouse=a
 set nowrap
 
@@ -9,7 +9,7 @@ set path+=**
 function! CustomGeneralHighlight()
 	hi Normal		ctermfg=252 ctermbg=234
 	hi LineNr		ctermfg=243 ctermbg=235
-	hi Comment		ctermfg=59
+	hi Comment		ctermfg=14
 	hi StatusLine	ctermfg=235 ctermbg=243
 	hi Statement	ctermfg=197
 	hi VertSplit	ctermfg=233	ctermbg=239
@@ -23,7 +23,7 @@ function! CustomCppHighlight() abort
 	let g:cpp_member_highlight = 0
 	let g:cpp_simple_highlight = 0
 
-	hi cComment				ctermfg=59
+	hi cComment				ctermfg=14
 	hi cType				ctermfg=lightblue
 	hi cStructure			ctermfg=lightblue
 	hi cInclude				ctermfg=197
@@ -67,6 +67,7 @@ function! CustomPythonHighlight() abort
 	hi pythonImport			ctermfg=197
 	hi pythonOperator		ctermfg=197
 	hi pythonRepeat			ctermfg=197
+	hi pythonException		ctermfg=197
 	hi pythonFunction		ctermfg=118
 	hi pythonClassVar		ctermfg=215
 	hi pythonNumber			ctermfg=141
@@ -77,6 +78,7 @@ function! CustomPythonHighlight() abort
 	hi pythonString			ctermfg=186
 	hi pythonFString		ctermfg=186
 	hi pythonBuiltinObj		ctermfg=7
+
 endfunction
 
 "Plugins
@@ -160,5 +162,6 @@ set hlsearch
 au BufWrite /private/tmp/crontab.* set nowritebackup
 au BufWrite /private/etc/pw.* set nowritebackup
 
+""execute "normal! source '~/.vimrc'"
 "Returns the value of of a hughlight group
 ":echo synIDattr(synIDtrans(hlID('')), 'fg')
