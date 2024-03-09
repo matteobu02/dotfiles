@@ -1,0 +1,30 @@
+format = "$username@$hostname:$directory$git_branch$character"
+add_newline = false
+
+[username]
+format = "[$user]($style)"
+show_always = true
+style_root = "bold red"
+style_user = "bold green"
+
+[hostname]
+disabled = false
+format = "[$hostname]($style)"
+ssh_only = false
+style = "bold dimmed red"
+trim_at = "-"
+
+[directory]
+style = "blue"
+truncate_to_repo = false
+truncation_length = 0
+
+[sudo]
+disabled = false
+
+[git_branch]
+format = "[$branch(:$remote_branch)]($style) "
+
+[character]
+error_symbol = ">"
+success_symbol = ">"
