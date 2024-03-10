@@ -1,0 +1,84 @@
+syntax on
+
+set nu
+set relativenumber
+set mouse=v
+set nowrap
+
+set path+=**
+set tags+=~/.tags/tags
+
+"Activate indentation
+filetype off
+filetype plugin indent on
+set smartindent
+
+"Non-expanded, 4-wide tabulations
+set tabstop=4
+set shiftwidth=4
+set noexpandtab
+
+"Disable vi-compatibility
+set nocompatible
+
+"Real-world encoding
+set encoding=utf-8
+
+"Interpret modelines in files
+set modelines=1
+
+"Do not abandon buffers
+set hidden
+
+"Don't bother throttling tty
+set ttyfast
+
+"More useful backspace behavior
+set backspace=indent,eol,start
+
+"Use statusbar on all windows
+set laststatus=2
+
+"Better search
+set ignorecase
+set smartcase
+set incsearch
+set showmatch
+set hlsearch
+
+"Prevent backups when editing system files
+au BufWrite /private/tmp/crontab.* set nowritebackup
+au BufWrite /private/etc/pw.* set nowritebackup
+
+"Plugins
+call plug#begin('~/.vim/plugged')
+
+Plug '42Paris/42header'
+Plug 'vim-scripts/AutoComplPop'
+Plug 'vim-python/python-syntax'
+Plug 'bfrg/vim-cpp-modern'
+
+call plug#end()
+
+"42header vars
+let g:user42 = 'mbucci'
+let g:mail42 = 'mbucci@student.s19.be'
+
+"Remaps
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+nnoremap <C-o> <C-o>zz
+
+"Default Highlighting
+hi Normal		ctermfg=252 ctermbg=234
+hi LineNr		ctermfg=243 ctermbg=235
+hi Number		ctermfg=141
+hi StatusLine	ctermfg=235 ctermbg=243
+hi Statement	ctermfg=197
+hi VertSplit	ctermfg=233	ctermbg=239
+hi Pmenu					ctermbg=darkgrey
+hi pmenuSel					ctermbg=grey
+
+"Returns the value of of a hughlight group
+":echo synIDattr(synIDtrans(hlID('')), 'fg')
+
