@@ -20,11 +20,6 @@ require('mason').setup({})
 require('mason-lspconfig').setup({
 	ensure_installed = {
 		"clangd",
-		"pylsp",
-		--"asm_lsp",
-		--"bashls",
-		--"html",
-		--"jsonls",
 	},
 	handlers = {
 		function(server_name)
