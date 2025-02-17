@@ -6,9 +6,9 @@ vim.opt.nu = true
 vim.opt.rnu = true
 
 -- indentation
-vim.opt.tabstop = 4
+vim.opt.tabstop = 8 -- make tabs stand out
 vim.opt.shiftwidth = 4
-vim.opt.expandtab = false
+vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- no line wrap
