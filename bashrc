@@ -13,7 +13,6 @@ fi
 
 export PS1
 
-alias gcl='git clone'
 alias py='python3'
 alias cp='cp -r'
 alias rm='rm -rf'
@@ -21,14 +20,13 @@ alias rma='rm a.out'
 alias vim='/usr/bin/nvim'
 alias grep='grep --color=auto'
 
-# Docker aliases
-alias ddown='docker-compose down -v --rmi all --remove-orphans'
-alias doup='docker-compose up -d'
+# git aliases
+alias gcl='git clone'
+alias gst='git status'
 
 # dotfiles
-alias vrc='vim ~/.vimrc'
+alias vrc='vim ~/.config/nvim'
 alias brc='vim ~/.bashrc'
-
 
 # ls aliases
 alias la='ls -la'
