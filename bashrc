@@ -1,24 +1,49 @@
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Load starship prompt if starship is installed
+if  [ -x /usr/bin/starship ]; then
+    __main() {
+        local major="${BASH_VERSINFO[0]}"
+        local minor="${BASH_VERSINFO[1]}"
+
+        if ((major > 4)) || { ((major == 4)) && ((minor >= 1)); }; then
+            source <("/usr/bin/starship" init bash --print-full-init)
+        else
+            source /dev/stdin <<<"$("/usr/bin/starship" init bash --print-full-init)"
+        fi
+    }
+    __main
+    unset -f __main
+fi
+
 export PATH="/usr/local/bin/:$PATH"
 export BASH_SILENCE_DEPRECATION_WARNING=1
 export LSCOLORS="ExFxCxDxBxegedabagaced"
 
-force_color_prompt=yes
+# Replace ls with exa (comment if exa not installed)
+alias ls='exa --color=always --group-directories-first' # preferred listing
+alias la='exa -la --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
+alias l.='exa -ald --color=always --group-directories-first .*' # show only dotfiles
 
-if [ $(id -u) -eq 0 ];
-then
-	PS1='\[\033[01;31m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] # '
-else
-	PS1='\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] $ '
-fi
-
-export PS1
-
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
 alias py='python3'
 alias cp='cp -r'
 alias rm='rm -rf'
 alias rma='rm a.out'
 alias vim='/usr/bin/nvim'
 alias grep='grep --color=auto'
+alias ip='ip -color'
+alias disas='objdump --disassembler-color=on -d -Mintel'
+alias asm='nasm -felf64'
+
+export EDITOR=vim
 
 # git aliases
 alias gcl='git clone'
